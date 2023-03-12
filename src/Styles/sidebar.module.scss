@@ -1,0 +1,186 @@
+// @use "variables";
+
+.full {
+  width: 100%;
+  max-width: 110px;
+  height: 100vh;
+  background: red;
+  overflow-y: auto;
+  white-space: nowrap;
+  transition: all 0.4s ease-in-out;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    &::-webkit-scrollbar-thumb {
+      transition: all 0.2s ease-in-out;
+      background-color: #963eef;
+      height: 10px;
+      border-radius: 4px;
+    }
+  }
+  .logo_sidebar {
+    width: 100%;
+    max-width: 151px;
+    margin: 30px auto;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    li {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+      p {
+        display: none;
+      }
+      &:hover {
+        background: linear-gradient(
+          90.77deg,
+          #9b48ef 0.24%,
+          rgba(143, 31, 255, 0) 93.25%
+        );
+        transition: all 0.2s ease-in-out;
+      }
+      .wrapper_link {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        align-items: baseline;
+        gap: 10px;
+        p {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  width: 100%;
+  // max-width: 300px;
+  min-width: 185px;
+  // height: 100vh;
+  border-radius: 22px;
+  height: calc(100vh - 97px);
+  background: #5a3ec8;
+  overflow-y: auto;
+  transition: all 0.4s ease-in-out;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    &::-webkit-scrollbar-thumb {
+      transition: all 0.2s ease-in-out;
+      background-color: #963eef;
+      height: 10px;
+      border-radius: 4px;
+    }
+  }
+  &:focus {
+    transition: all 0.2s ease-in-out;
+    &::-webkit-scrollbar-thumb {
+      transition: all 0.2s ease-in-out;
+      background-color: #963eef;
+      height: 10px;
+      border-radius: 4px;
+    }
+  }
+  .logo_sidebar {
+    width: 100%;
+    max-width: 151px;
+    margin: 30px auto;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    display: block;
+
+    hr {
+      width: 76%;
+      margin: 0px auto;
+      color: #9594de;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background: linear-gradient(
+          90.77deg,
+          #9b48ef 0.24%,
+          rgba(143, 31, 255, 0) 93.25%
+        );
+        transition: all 0.2s ease-in-out;
+      }
+      &.active {
+        .wrapper_link {
+          // background: linear-gradient(
+          //   90.77deg,
+          //   #9b48ef 0.24%,
+          //   rgba(143, 31, 255, 0) 93.25%
+          // ) !important;
+        }
+      }
+
+      .activeIcon {
+        background: white;
+        padding: 0px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .inactive {
+        color: #9594de;
+        background: transparent !important;
+      }
+      .active {
+        color: white !important;
+        background: transparent !important;
+      }
+
+      .wrapper_link {
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        text-decoration: none;
+        // align-items: baseline;
+        // gap: 10px;
+        // padding: 5px 30px;
+        padding: 5px 0px 5px 20px;
+        width: 100%;
+
+        p {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+}

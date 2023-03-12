@@ -1,0 +1,33 @@
+.chat {
+  position: fixed;
+  bottom: -6px;
+  right: 103px;
+  width: 234px;
+  z-index: 9999;
+  border: 1px solid #5a3ec8;
+  border-radius: 10px;
+
+  .chatHeader {
+    background: #5a3ec8;
+    color: white;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .chatBody {
+    height: 293px;
+    overflow: auto;
+  }
+
+  ul {
+    padding: 0px;
+
+    li {
+      padding: 7px 12px 7px 12px;
+      width: 100%;
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
