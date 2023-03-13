@@ -1,17 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { fetchAsync } from "../Redux/UserThunks";
+import React from "react";
+import UserList from "../Components/UserList";
+import { useUserList } from "../Hooks/useUserList";
 import homeStyle from "../Styles/home.module.scss";
 
 const Home = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { users, status } = useSelector((state) => state.users);
-
-  useEffect(() => {
-    dispatch(fetchAsync());
-  }, [dispatch]);
+  const { users, status } = useUserList();
 
   if (status === "loading") {
     return <h1>Loading</h1>;
@@ -23,14 +16,7 @@ const Home = () => {
         <div>
           <h2>Select an account</h2>
 
-          <ul>
-            {users?.map(({ id, name, profilepicture }) => (
-              <li key={id} onClick={() => navigate(`/${id}/profile`)}>
-                <img src={profilepicture} alt="" />
-                <span>{name}</span>
-              </li>
-            ))}
-          </ul>
+          <UserList users={users} />
         </div>
       </div>
     </>

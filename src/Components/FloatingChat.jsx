@@ -1,20 +1,15 @@
-import React, { useEffect, useReducer } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAsync } from "../Redux/UserThunks";
+import React, { useReducer } from "react";
 import "../Styles/chat.scss";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { BsChatRight } from "react-icons/bs";
+import { useUserList } from "./../Hooks/useUserList";
+import UserList from "./UserList";
 
 const FloatingChat = () => {
   const [showChat, setShowChat] = useReducer((show) => !show, true);
-  const dispatch = useDispatch();
-  const { users, status } = useSelector((state) => state.users);
+  const { users, status } = useUserList();
 
   const toggleChat = () => (showChat ? <FaAngleDown /> : <FaAngleUp />);
-
-  useEffect(() => {
-    dispatch(fetchAsync());
-  }, [dispatch]);
 
   if (status === "loading") {
     return <h1>Loading</h1>;
@@ -32,14 +27,7 @@ const FloatingChat = () => {
 
         {showChat && (
           <div className="chatBody">
-            <ul>
-              {users?.map(({ id, name, profilepicture }) => (
-                <li key={id}>
-                  <img src={profilepicture} alt="" height="20" />
-                  <span>{name}</span>
-                </li>
-              ))}
-            </ul>
+            <UserList users={users} />
           </div>
         )}
       </div>

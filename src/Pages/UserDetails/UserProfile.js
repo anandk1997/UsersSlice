@@ -10,7 +10,7 @@ const UserProfile = () => {
   const { selectedUser } = useUserDetails();
 
   const { address: { geo: { lat, lng } = {} } = {} } = selectedUser ?? {};
-  
+
   const text = (Label, Value) => (
     <div className="d-flex justify-content-center">
       <span className="me-2">{Label} :</span>
@@ -64,7 +64,7 @@ const UserProfile = () => {
             {text("City", selectedUser?.address?.city)}
             {text("Zipcode", selectedUser?.address?.zipcode)}
 
-             <iframe
+            <iframe
               src={`https://maps.google.com/maps?q=${lat},${lng}&hl=es;&output=embed`}
               className="ms-4 mt-5"
               title="maps"

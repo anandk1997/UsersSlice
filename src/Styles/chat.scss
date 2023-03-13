@@ -3,7 +3,7 @@
   bottom: -6px;
   right: 103px;
   background: white;
-  width: 234px;
+  max-width: 305px;
   z-index: 9999;
   border: 1px solid #5a3ec8;
   border-radius: 10px;
@@ -19,16 +19,24 @@
   .chatBody {
     height: 293px;
     overflow: auto;
+
+    img {
+      height: 23px;
+    }
   }
 
   ul {
     padding: 0px;
-
     li {
+      cursor: pointer;
       padding: 7px 12px 7px 12px;
       width: 100%;
       display: flex;
       gap: 10px;
+
+      &:hover {
+        background: #f6f6f6;
+      }
     }
   }
 }
