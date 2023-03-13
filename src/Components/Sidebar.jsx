@@ -13,7 +13,7 @@ const Sidebar = ({ Page, PofilePgae, PostsPage, GalleryPage, TodoPage }) => {
           {Name}
         </span>
         <span className={sidebarCss.activeIcon}>
-          {Page && <FaAngleRight fill />}
+          {Page && <FaAngleRight fill="black" />}
         </span>
       </NavLink>
     </li>
