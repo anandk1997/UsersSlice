@@ -9,6 +9,8 @@ import FloatingChat from "./../../Components/FloatingChat";
 const UserProfile = () => {
   const { selectedUser } = useUserDetails();
 
+  const { address: { geo: { lat, lng } = {} } = {} } = selectedUser ?? {};
+  
   const text = (Label, Value) => (
     <div className="d-flex justify-content-center">
       <span className="me-2">{Label} :</span>
@@ -61,6 +63,15 @@ const UserProfile = () => {
             {text("Suite", selectedUser?.address?.suite)}
             {text("City", selectedUser?.address?.city)}
             {text("Zipcode", selectedUser?.address?.zipcode)}
+
+             <iframe
+              src={`https://maps.google.com/maps?q=${lat},${lng}&hl=es;&output=embed`}
+              className="ms-4 mt-5"
+              title="maps"
+              height="350px"
+              width="90%"
+              frameBorder="0"
+            />
           </Col>
         </Row>
         <FloatingChat />
